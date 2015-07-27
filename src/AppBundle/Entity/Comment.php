@@ -4,13 +4,12 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-    /**
-    * @var integer
-    *
-    * @ORM\Column(name="id", type="integer")
-    * @ORM\Id
-    * @ORM\GeneratedValue(strategy="AUTO")
-    */
+   /**
+ * Comment
+ *
+ * @ORM\Table(name="comment")
+ * @ORM\Entity
+ */
 class Comment
 {
     /**
@@ -21,14 +20,7 @@ class Comment
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="commentId", type="integer")
-     */
-    private $Id;
-    
+      
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users", inversedBy="comments")
      * @ORM\JoinColumn(name="created_by", referencedColumnName="id")
@@ -38,7 +30,7 @@ class Comment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="createdAt", type="datetime")
+     * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
 
@@ -52,7 +44,7 @@ class Comment
     
     public function __construct()
     {
-        $this->createdAt = new \DateTime();
+        $this->createdAt = new \DateTime("now");
        
     }
     

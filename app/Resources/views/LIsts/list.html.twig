@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Użytkownicy{% endblock %}
+
+{% block body %}
+    <h1>Użytkownicy</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Użytkownik</th>
+                <th>Data dodania</th>
+                <th>ilość wpisów</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for comment in comments %}
+                <tr>
+                    <td>{{ comment.id }}</td>
+                    <td>{{ comment.user.login }}</td>
+                    <td>{{ comment.comment }}</td>
+                    <td>{{ comment.number.of.comments }}</td>
+                </tr>                
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    
+{% endblock %}
