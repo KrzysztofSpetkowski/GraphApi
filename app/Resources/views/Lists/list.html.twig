@@ -21,6 +21,8 @@
                 <tr>
                     <td>{{ comment.id }}</td>
                     <td>{{ comment.users }}</td>
+                    <td>{{ comment.createdAt|date('d-m-Y') }}</td>
+{#                    <td>{{ comment.users.number_of_comments }}</td>#}
                 </tr>                
             {% endfor %}
             
