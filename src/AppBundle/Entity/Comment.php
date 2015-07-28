@@ -44,7 +44,8 @@ class Comment
     
     public function __construct()
     {
-        $this->createdAt = new \DateTime("now");
+        $this->createdAt = new \DateTime('now');
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
        
     }
     

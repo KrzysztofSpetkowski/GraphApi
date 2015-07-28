@@ -20,9 +20,7 @@
             {% for comment in comments %}
                 <tr>
                     <td>{{ comment.id }}</td>
-                    <td>{{ comment.user.login }}</td>
-                    <td>{{ comment.comment }}</td>
-                    <td>{{ comment.number.of.comments }}</td>
+                    <td>{{ comment.users }}</td>
                 </tr>                
             {% endfor %}
             
