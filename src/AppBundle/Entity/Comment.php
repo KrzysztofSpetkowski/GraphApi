@@ -22,11 +22,12 @@ class Comment
      */
     private $id;
       
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users", inversedBy="comments")
-     * @ORM\JoinColumn(name="created_by", referencedColumnName="id")
-     */
-    private $createdBy;
+//   /**
+//     * @var \DateTime
+//     *
+//     * @ORM\Column(name="created_by", type="string", lenght = 255)
+//     */
+//    private $createdBy;
 
     /**
      * @var \DateTime
@@ -41,6 +42,13 @@ class Comment
      * @ORM\Column(name="users", type="string", length=255)
      */
     private $users;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="number_of_comments", type="integer")
+     */
+    private $numberOfComments;
 
     
     public function __construct()
@@ -73,28 +81,7 @@ class Comment
         return $this->id;
     }
 
-    /**
-     * Set createdBy
-     *
-     * @param string $createdBy
-     * @return Comment
-     */
-    public function setCreatedBy($createdBy)
-    {
-        $this->createdBy = $createdBy;
 
-        return $this;
-    }
-
-    /**
-     * Get createdBy
-     *
-     * @return string 
-     */
-    public function getCreatedBy()
-    {
-        return $this->createdBy;
-    }
 
     /**
      * Set createdAt
@@ -140,5 +127,27 @@ class Comment
     public function getUsers()
     {
         return $this->users;
+    }
+    /**
+     * Set numberOfComments
+     *
+     * @param integer $numberOfComments
+     * @return Users
+     */
+    public function setNumberOfComments($numberOfComments)
+    {
+        $this->numberOfComments = $numberOfComments;
+
+        return $this;
+    }
+
+    /**
+     * Get numberOfComments
+     *
+     * @return integer 
+     */
+    public function getNumberOfComments()
+    {
+        return $this->numberOfComments;
     }
 }
